@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://art/ui/leader.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/BaseMenuPanel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://art/ui/sound.png" type="Texture" id=3]
+[ext_resource path="res://art/ui/close.png" type="Texture" id=4]
+[ext_resource path="res://art/ground.png" type="Texture" id=5]
+[ext_resource path="res://art/cloud_02.png" type="Texture" id=6]
+[ext_resource path="res://art/blue-tree.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/SettingsPanel.gd" type="Script" id=8]
+
+[node name="settings" instance=ExtResource( 2 )]
+script = ExtResource( 8 )
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.74902, 0.823529, 0.945098, 1 )
+
+[node name="tree" type="TextureRect" parent="." index="1"]
+margin_left = -79.0
+margin_top = 324.0
+margin_right = 294.0
+margin_bottom = 891.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="cloud" type="TextureRect" parent="." index="2"]
+margin_left = 267.0
+margin_top = 13.0
+margin_right = 662.0
+margin_bottom = 275.0
+texture = ExtResource( 6 )
+expand = true
+
+[node name="ground" type="TextureRect" parent="." index="3"]
+margin_left = -3.0
+margin_top = 790.0
+margin_right = 582.0
+margin_bottom = 1030.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Graphics and Button" parent="MarginContainer" index="0"]
+custom_constants/separation = 100
+
+[node name="Graphic" parent="MarginContainer/Graphics and Button" index="0"]
+margin_bottom = 400.0
+rect_min_size = Vector2( 400, 400 )
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="Button" parent="MarginContainer/Graphics and Button" index="1"]
+margin_top = 500.0
+margin_bottom = 908.0
+custom_constants/separation = 80
+
+[node name="Button1" parent="MarginContainer/Graphics and Button/Button" index="0"]
+margin_bottom = 200.0
+rect_min_size = Vector2( 400, 200 )
+texture_normal = ExtResource( 3 )
+expand = true
+stretch_mode = 5
+
+[node name="Button2" parent="MarginContainer/Graphics and Button/Button" index="1"]
+margin_top = 280.0
+margin_bottom = 408.0
+rect_min_size = Vector2( 512, 128 )
+texture_normal = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+
+[connection signal="pressed" from="MarginContainer/Graphics and Button/Button/Button1" to="." method="_on_Button1_pressed"]
+[connection signal="pressed" from="MarginContainer/Graphics and Button/Button/Button2" to="." method="_on_Button2_pressed"]

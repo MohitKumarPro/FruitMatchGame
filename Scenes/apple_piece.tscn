@@ -1,0 +1,20 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/piece.tscn" type="PackedScene" id=1]
+[ext_resource path="res://art/piece/apple.png" type="Texture" id=2]
+[ext_resource path="res://art/piece/tile.png" type="Texture" id=3]
+[ext_resource path="res://art/piece/apple_ad_bomb.png" type="Texture" id=4]
+[ext_resource path="res://art/piece/apple_col_bomb.png" type="Texture" id=5]
+[ext_resource path="res://art/piece/apple_row_bomb.png" type="Texture" id=6]
+
+[node name="apple_piece" instance=ExtResource( 1 )]
+color = "apple"
+row_texture = ExtResource( 6 )
+column_texture = ExtResource( 5 )
+adjacent_texture = ExtResource( 4 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" parent="." index="1"]
+texture = ExtResource( 2 )
